@@ -7,7 +7,7 @@ int main(int arc, char **arv)
 	int i, j;
 	FILE *source;
 	char *buf = NULL;
-	/*long long*/ int x = 0, y = 0, z = 0, w = 0;
+	unsigned long long int x = 0, y = 0, z = 0, w = 0;
 	size_t n;
 
 	for (i = 1; i < arc; i++)
@@ -20,7 +20,7 @@ int main(int arc, char **arv)
 		}
 		while (getline(&buf, &n, source) != -1)
 		{
-			sscanf(buf, "%d", &x);
+			sscanf(buf, "%llu", &x);
 			if (x % 2 == 0)
 			{
 				y = x / 2;
@@ -59,7 +59,7 @@ int main(int arc, char **arv)
 				y = x;
 				z = 1;
 			}
-			printf("%d=%d*%d\n", x, y, z);
+			printf("%llu=%llu*%llu\n", x, y, z);
 		}
 		free(buf);
 		buf = NULL;

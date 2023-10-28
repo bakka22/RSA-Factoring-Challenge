@@ -29,7 +29,7 @@ int main(int arc, char **arv)
 			else
 			{
 				w = 3;
-				while (w < (x / 2))
+				while (w < x)
 				{
 					if (x % w == 0)
 					{
