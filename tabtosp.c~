@@ -10,6 +10,11 @@ int main(int arc, char **arv)
 	unsigned long long int x = 0, y = 0, z = 0, w = 0;
 	size_t n;
 
+	if (arc != 2)
+	{
+		fprintf(stderr, "Usage: factors <file>");
+		exit(EXIT_FAILUER);
+	}
 	for (i = 1; i < arc; i++)
 	{
 		source = fopen(arv[i], "r");
@@ -29,7 +34,7 @@ int main(int arc, char **arv)
 			else
 			{
 				w = 3;
-				while (w < (x / 2))
+				while (w < x)
 				{
 					if (x % w == 0)
 					{
